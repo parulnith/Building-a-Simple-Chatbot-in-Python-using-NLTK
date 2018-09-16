@@ -3,27 +3,13 @@
 
 # # Meet Robo: your friend
 
-# In[3]:
-
-
 import nltk
 
-
-# In[ ]:
-
-
 # nltk.download() # for downloading packages
-
-
-# In[1]:
-
 
 import numpy as np
 import random
 import string # to process standard python strings
-
-
-# In[4]:
 
 
 f=open('corpus.txt','r',errors = 'ignore')
@@ -35,19 +21,10 @@ sent_tokens = nltk.sent_tokenize(raw)# converts to list of sentences
 word_tokens = nltk.word_tokenize(raw)# converts to list of words
 
 
-# In[5]:
-
-
 sent_tokens[:2]
 
 
-# In[6]:
-
-
 word_tokens[:5]
-
-
-# In[7]:
 
 
 lemmer = nltk.stem.WordNetLemmatizer()
@@ -58,14 +35,9 @@ def LemNormalize(text):
     return LemTokens(nltk.word_tokenize(text.lower().translate(remove_punct_dict)))
 
 
-# In[8]:
-
-
 GREETING_INPUTS = ("hello", "hi", "greetings", "sup", "what's up","hey",)
 GREETING_RESPONSES = ["hi", "hey", "*nods*", "hi there", "hello", "I am glad! You are talking to me"]
 
-
-# In[9]:
 
 
 # Checking for greetings
@@ -76,14 +48,8 @@ def greeting(sentence):
             return random.choice(GREETING_RESPONSES)
 
 
-# In[10]:
-
-
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-
-
-# In[11]:
 
 
 # Generating response
@@ -102,9 +68,6 @@ def response(user_response):
     else:
         robo_response = robo_response+sent_tokens[idx]
         return robo_response
-
-
-# In[12]:
 
 
 flag=True
