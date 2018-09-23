@@ -12,7 +12,7 @@ import random
 import string # to process standard python strings
 
 
-f=open('corpus.txt','r',errors = 'ignore')
+f=open('chatbot.txt','r',errors = 'ignore')
 raw=f.read()
 raw=raw.lower()# converts to lowercase
 #nltk.download('punkt') # first-time use only
