@@ -4,6 +4,8 @@
 # # Meet Robo: your friend
 
 import nltk
+import warnings
+warnings.filterwarnings("ignore")
 
 # nltk.download() # for downloading packages
 
