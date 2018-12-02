@@ -55,6 +55,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 # Generating response
 def response(user_response):
     robo_response=''
+    sent_tokens.append(user_response)
     TfidfVec = TfidfVectorizer(tokenizer=LemNormalize, stop_words='english')
     tfidf = TfidfVec.fit_transform(sent_tokens)
     vals = cosine_similarity(tfidf[-1], tfidf)
@@ -84,9 +85,6 @@ while(flag==True):
             if(greeting(user_response)!=None):
                 print("ROBO: "+greeting(user_response))
             else:
-                sent_tokens.append(user_response)
-                word_tokens=word_tokens+nltk.word_tokenize(user_response)
-                final_words=list(set(word_tokens))
                 print("ROBO: ",end="")
                 print(response(user_response))
                 sent_tokens.remove(user_response)
