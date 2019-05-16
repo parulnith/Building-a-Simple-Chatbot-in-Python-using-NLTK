@@ -3,22 +3,29 @@
 
 # # Meet Robo: your friend
 
-import nltk
-import warnings
-warnings.filterwarnings("ignore")
-
-# nltk.download() # for downloading packages
-
-import numpy as np
+import io
 import random
 import string # to process standard python strings
+import warnings
 
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
-f=open('chatbot.txt','r',errors = 'ignore')
-raw=f.read()
-raw=raw.lower()# converts to lowercase
+import numpy as np
+
+import nltk
+from nltk.stem import WordNetLemmatizer
+
+warnings.filterwarnings("ignore")
+
+nltk.download('popular', quiet=True) # for downloading packages
+# Includes the following already.
 #nltk.download('punkt') # first-time use only
 #nltk.download('wordnet') # first-time use only
+
+with open('chatbot.txt','r', encoding='utf8', errors ='ignore') as fin:
+    raw = fin.read().lower()
+
 sent_tokens = nltk.sent_tokenize(raw)# converts to list of sentences 
 word_tokens = nltk.word_tokenize(raw)# converts to list of words
 
@@ -29,7 +36,7 @@ sent_tokens[:2]
 word_tokens[:5]
 
 
-lemmer = nltk.stem.WordNetLemmatizer()
+lemmer = WordNetLemmatizer()
 def LemTokens(tokens):
     return [lemmer.lemmatize(token) for token in tokens]
 remove_punct_dict = dict((ord(punct), None) for punct in string.punctuation)
@@ -50,8 +57,6 @@ def greeting(sentence):
             return random.choice(GREETING_RESPONSES)
 
 
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
 
 
 # Generating response
