@@ -1,40 +1,34 @@
 
-# coding: utf-8
+#Meet Robo: your friend
 
-# # Meet Robo: your friend
-
+#import necessary libraries
 import io
 import random
 import string # to process standard python strings
 import warnings
-
+import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-import numpy as np
-
 import nltk
 from nltk.stem import WordNetLemmatizer
-
-warnings.filterwarnings("ignore")
-
 nltk.download('popular', quiet=True) # for downloading packages
-# Includes the following already.
+
+# uncomment the following only the first time
 #nltk.download('punkt') # first-time use only
 #nltk.download('wordnet') # first-time use only
 
+
+#Reading in the corpus
 with open('chatbot.txt','r', encoding='utf8', errors ='ignore') as fin:
     raw = fin.read().lower()
 
+#Calculating the tokens
 sent_tokens = nltk.sent_tokenize(raw)# converts to list of sentences 
 word_tokens = nltk.word_tokenize(raw)# converts to list of words
 
-
 sent_tokens[:2]
-
-
 word_tokens[:5]
-
 
 lemmer = WordNetLemmatizer()
 def LemTokens(tokens):
@@ -42,7 +36,6 @@ def LemTokens(tokens):
 remove_punct_dict = dict((ord(punct), None) for punct in string.punctuation)
 def LemNormalize(text):
     return LemTokens(nltk.word_tokenize(text.lower().translate(remove_punct_dict)))
-
 
 GREETING_INPUTS = ("hello", "hi", "greetings", "sup", "what's up","hey",)
 GREETING_RESPONSES = ["hi", "hey", "*nods*", "hi there", "hello", "I am glad! You are talking to me"]
@@ -55,8 +48,6 @@ def greeting(sentence):
     for word in sentence.split():
         if word.lower() in GREETING_INPUTS:
             return random.choice(GREETING_RESPONSES)
-
-
 
 
 # Generating response
@@ -80,7 +71,6 @@ def response(user_response):
 
 flag=True
 print("ROBO: My name is Robo. I will answer your queries about Chatbots. If you want to exit, type Bye!")
-
 while(flag==True):
     user_response = input()
     user_response=user_response.lower()
