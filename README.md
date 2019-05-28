@@ -9,9 +9,9 @@ On similar lines let's create a very basic chatbot utlising the Python's NLTK li
 
 # Outline
 * [Motivation](#motivation)
-* Blogpost(#blogpost)
-* Pre-requisites(#pre-requisites)
-* How to run(#how-to-run)
+* [Blogpost](#blogpost)
+* [Pre-requisites](#pre-requisites)
+* [How to run](#how-to-run)
 
 
 ## Motivation
@@ -43,8 +43,9 @@ nltk.download('wordnet')
 ```
 
 ## How to run
+* Jupyter Notebook
 * You can run the [chatbot.ipynb](https://github.com/parulnith/Building-a-Simple-Chatbot-in-Python-using-NLTK/blob/master/Chatbot.ipynb) which also includes step by step instructions.
-
-* ```
+* Through Terminal
+```
 python chatbot.py
 ```
