@@ -25,13 +25,11 @@ nltk.download('popular', quiet=True) # for downloading packages
 with open('chatbot.txt','r', encoding='utf8', errors ='ignore') as fin:
     raw = fin.read().lower()
 
-#Calculating the tokens
+#TOkenisation
 sent_tokens = nltk.sent_tokenize(raw)# converts to list of sentences 
 word_tokens = nltk.word_tokenize(raw)# converts to list of words
 
-sent_tokens[:2]
-word_tokens[:5]
-
+# Preprocessing
 lemmer = WordNetLemmatizer()
 def LemTokens(tokens):
     return [lemmer.lemmatize(token) for token in tokens]
@@ -39,12 +37,11 @@ remove_punct_dict = dict((ord(punct), None) for punct in string.punctuation)
 def LemNormalize(text):
     return LemTokens(nltk.word_tokenize(text.lower().translate(remove_punct_dict)))
 
+
+# Keyword Matching
 GREETING_INPUTS = ("hello", "hi", "greetings", "sup", "what's up","hey",)
 GREETING_RESPONSES = ["hi", "hey", "*nods*", "hi there", "hello", "I am glad! You are talking to me"]
 
-
-
-# Checking for greetings
 def greeting(sentence):
     """If user's input is a greeting, return a greeting response"""
     for word in sentence.split():
