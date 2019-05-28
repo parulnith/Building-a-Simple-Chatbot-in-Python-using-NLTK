@@ -10,17 +10,18 @@ For detailed analysis, please see the accompanying blog titled:**[Building a Sim
 
 # Outline
 * Motivation
+* Blogpost
 * Pre-requisites
-
-
-
+* Installation
+* How to run
 
 
 
 ## Motivation
 
-The idea of this project was not to create some SOTA chatbots with exceptional cognitive skills but just to utilise and test my Python skills.This was one of my very first projects, created  when I just stepped into the world of NLP and I thought of creating a simple chatbot just to make use of my newly acquired knowledge.
+The idea of this project was not to create some SOTA chatbot with exceptional cognitive skills but just to utilise and test my Python skills.This was one of my very first projects, created  when I just stepped into the world of NLP and I thought of creating a simple chatbot just to make use of my newly acquired knowledge.
 
 
 ## Pre-requisites
+
 
