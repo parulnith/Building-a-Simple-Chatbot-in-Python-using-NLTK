@@ -8,10 +8,10 @@ On similar lines let's create a very basic chatbot utlising the Python's NLTK li
 
 
 # Outline
-* Motivation
-* Blogpost
-* Pre-requisites
-* How to run
+* [Motivation](#motivation)
+* Blogpost(#blogpost)
+* Pre-requisites(#pre-requisites)
+* How to run(#how-to-run)
 
 
 ## Motivation
