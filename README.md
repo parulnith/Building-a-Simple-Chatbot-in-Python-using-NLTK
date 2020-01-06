@@ -50,3 +50,4 @@ You can run the [chatbot.ipynb](https://github.com/parulnith/Building-a-Simple-C
 ```
 python chatbot.py
 ```
+[![Run on Repl.it](https://repl.it/badge/github/parulnith/Building-a-Simple-Chatbot-in-Python-using-NLTK)](https://repl.it/github/parulnith/Building-a-Simple-Chatbot-in-Python-using-NLTK)
